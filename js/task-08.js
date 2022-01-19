@@ -20,4 +20,6 @@ function onSubmit(event){
         password: password.value,
     };
     console.log(formData);
+    event.currentTarget.reset();
 }
+

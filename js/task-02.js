@@ -9,9 +9,10 @@ const ingredients = [
 
 const ulEl = document.querySelector('#ingredients');
 
-const listItem = ingredients.reduce((previousValue, item) => {
-  return previousValue + `<li class="item">${item}</li>`;
-}, '');
-// console.log(listItem);
-
-ulEl.innerHTML = listItem;
+const finalList = ingredients.map(ingredient => {
+  const ingredientItem = document.createElement("li");
+  ingredientItem.classList.add("item");
+  ingredientItem.textContent = ingredient;
+  return ingredientItem;
+});
+ulEl.prepend(...finalList);

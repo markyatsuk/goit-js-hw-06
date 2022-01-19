@@ -15,6 +15,7 @@ const images = [
 
 const listEl = document.querySelector(".gallery");
 listEl.style.display = "flex";
-images.forEach(img => {
-  listEl.insertAdjacentHTML('beforeend', `<li style="margin-right: 50px"><img src="${img.url}" alt="${img.alt}" width="500" height="250"/> </li>`)
-})
+
+const imgEl = images.map( image => `<li style="margin-right: 50px"><img src="${image.url}" alt="${image.alt}" width="500" height="250"/></li>`)
+  .join("");
+  listEl.insertAdjacentHTML("beforeend", imgEl);
